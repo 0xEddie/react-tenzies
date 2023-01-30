@@ -1,27 +1,37 @@
+import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Dice from './components/Dice';
 
 function App() {
-  const numOfDice = 10;
-  const [dice, setDice] = useState(() => {
-    const diceArray = [];
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < numOfDice; i++) {
-      diceArray.push({
-        value: randomRoll(),
-        locked: false,
-      });
-    }
-    return diceArray;
-  });
-
-  function randomRoll() {
-    return Math.floor(Math.random() * 6);
+  // initialize dice array
+  const diceInit = [];
+  for (let i = 0; i < 10; i++) {
+    diceInit.push({
+      id: nanoid(),
+      value: randomRoll(),
+      locked: false,
+    });
   }
 
+  const [dice, setDice] = useState(diceInit);
+  console.log(dice);
+
+  // return a value from 1 to 6
+  function randomRoll() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
+  // TODO pass into Dice
+  function toggleLock(dieId) {
+    console.log(`locking die #${dieId}`);
+  }
+
+  // TODO implement state update
   function rollDice() {
     console.log('rolling!');
+    // if die is not 'locked', then roll a new value
+    // setState(oldDice =>)
   }
 
   return (
@@ -31,7 +41,7 @@ function App() {
         Roll until all dice are the same. Click each die to freeze it at its
         current value between rolls.
       </p>
-      <Dice />
+      <Dice dice={dice} />
       <button onClick={rollDice} type="button">
         Roll
       </button>

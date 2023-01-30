@@ -1,16 +1,23 @@
 import { useState } from 'react';
 
-function Dice() {
+function Dice({ dice }) {
+  console.log('dice: ', dice);
+  const dieElems = dice.map( die =>
+    <Die 
+      key={die.id}
+      die={die}
+    />
+    )
   return (
     <div className="dice">
-      <p>dice</p>
+      {dieElems}
     </div>
   );
 }
 
-function Die() {
-  const number = 3;
-  return <div className="die">{number}</div>;
+function Die({ die }) {
+  console.log('die: ',die);
+  return <button type='button' className="die">{die.value}</button>;
 }
 
 export default Dice;
