@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/karla": "^4.5.11",
+    "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -19,8 +20,8 @@
     "@vitejs/plugin-react": "^3.0.0",
     "eslint": "^8.0.0",
     "eslint-config-wesbos": "3.2.3",
+    "eslint-plugin-import": "^2.27.5",
     "prettier": "^2.7.1",
-    "typescript": "^4.8.4",
     "vite": "^4.0.0"
   }
 }
