@@ -1,11 +1,9 @@
-import { useState } from 'react';
-
-function Dice({ dice }) {
-  console.log('dice: ', dice);
+function Dice({ dice, toggleLock }) {
   const dieElems = dice.map( die =>
     <Die 
       key={die.id}
       die={die}
+      toggleLock={toggleLock}
     />
     )
   return (
@@ -15,8 +13,15 @@ function Dice({ dice }) {
   );
 }
 
-function Die({ die }) {
-  return <button type='button' className="button--die">{die.value}</button>;
-}
+function Die({ die, toggleLock }) {
+  return (
+    <button 
+      type='button' 
+      className="button--die" 
+      onClick={(e) => toggleLock(e, die.id)} 
+    >
+      {die.value}
+    </button>
+  )}
 
 export default Dice;

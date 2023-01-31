@@ -15,7 +15,6 @@ function App() {
   }
 
   const [dice, setDice] = useState(diceInit);
-  console.log(dice);
 
   // return a value from 1 to 6
   function randomRoll() {
@@ -23,8 +22,8 @@ function App() {
   }
 
   // TODO pass into Dice
-  function toggleLock(dieId) {
-    console.log(`locking die #${dieId}`);
+  function toggleLock(e, dieId) {
+    console.log(`toggle lock for die #${dieId}`);
   }
 
   // TODO implement state update
@@ -41,7 +40,7 @@ function App() {
         Roll until all dice are the same. <br />Click each die to freeze it at its
         current value between rolls.
       </p>
-      <Dice dice={dice} />
+      <Dice dice={dice} toggleLock={toggleLock} />
       <button className="button--roll" onClick={rollDice} type="button">
         Roll
       </button>
