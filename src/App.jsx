@@ -4,17 +4,19 @@ import './App.css';
 import Dice from './components/Dice';
 
 function App() {
-  // initialize dice array
-  const diceInit = [];
-  for (let i = 0; i < 10; i++) {
-    diceInit.push({
-      id: nanoid(),
-      value: randomRoll(),
-      locked: false,
-    });
+  const [dice, setDice] = useState(diceInit());
+  
+  function diceInit() {
+    const initialDice = [];
+    for (let i = 0; i < 10; i++) {
+      initialDice.push({
+        id: nanoid(),
+        value: randomRoll(),
+        locked: false,
+      });
+    }
+    return initialDice;
   }
-
-  const [dice, setDice] = useState(diceInit);
 
   // return a value from 1 to 6
   function randomRoll() {
