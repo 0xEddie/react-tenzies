@@ -30,6 +30,9 @@ button {
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button--die {
@@ -55,7 +58,10 @@ button {
   color: #fff;
   font-size: 16px;
   letter-spacing: normal;
-  height: 42px;
-  width: 102px;
-  padding: auto;
+  min-height: 42px;
+  padding: 0.6rem 1.7rem;
+}
+
+.button--roll:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
