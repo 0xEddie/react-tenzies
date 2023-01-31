@@ -29,6 +29,7 @@ button {
   font-weight: inherit;
   border: 0;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .button--die {
