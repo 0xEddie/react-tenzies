@@ -23,7 +23,6 @@ function App() {
 
   // when a die is clicked, toggle its 'locked' property
   function toggleLock(e, dieId) {
-    // console.log(`toggle lock for die #${dieId}`);
     // map over dice array, update 'locked' if 'dieId' matches current 'die.id'
     setDice(oldDice => oldDice.map(
       die => ({
@@ -33,11 +32,14 @@ function App() {
     ))
   }
 
-  // TODO implement state update
+  // dice array state update: if die is not 'locked', then roll a new value
   function rollDice() {
-    console.log('rolling!');
-    // if die is not 'locked', then roll a new value
-    // setState(oldDice =>)
+    setDice(oldDice => oldDice.map(
+      die => ({
+        ...die,
+        value: die.locked ? die.value : randomRoll()
+      })
+    ))
   }
 
   return (
