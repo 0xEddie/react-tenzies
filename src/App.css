@@ -8,10 +8,50 @@ main {
   align-items: center;
 }
 
+p {
+  font: Inter;
+  font-weight: 400;
+  color: #4a4e74;
+  margin: 8px 47px 0;
+  max-width: 280px;
+  text-align: center;
+}
+
+.dice-container {
+  margin: 25px 37px;
+  max-width: 340px;
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+
 button {
-  padding: 6px 21px;
-  color: #ffffff;
-  background-color: #5035ff;
-  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  font-weight: inherit;
+  border: 0;
   border-radius: 4px;
+}
+
+.button--die {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  color: #2b283a;
+  font-size: 21px;
+  height: 42px;
+  width: 42px;
+  padding: auto;
+}
+
+.locked {
+  background-color: #59e391;
+}
+
+.button--roll {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+  background-color: #5035ff;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: normal;
+  height: 42px;
+  width: 102px;
+  padding: auto;
 }

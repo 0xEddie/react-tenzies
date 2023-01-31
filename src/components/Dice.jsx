@@ -9,15 +9,14 @@ function Dice({ dice }) {
     />
     )
   return (
-    <div className="dice">
+    <div className="dice-container">
       {dieElems}
     </div>
   );
 }
 
 function Die({ die }) {
-  console.log('die: ',die);
-  return <button type='button' className="die">{die.value}</button>;
+  return <button type='button' className="button--die">{die.value}</button>;
 }
 
 export default Dice;
