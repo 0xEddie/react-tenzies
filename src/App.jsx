@@ -1,10 +1,11 @@
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Dice from './components/Dice';
 
 function App() {
   const [dice, setDice] = useState(diceInit());
+  const [gameWon, setGameWon] = useState(false);
   
   function diceInit() {
     const initialDice = [];
@@ -43,6 +44,20 @@ function App() {
       })
     ))
   }
+  
+  useEffect(() => {
+    // check if all dice match values
+    const val = dice[0].value;
+    let winCheck = true
+    for (let i = 1; i < dice.length; i++) {
+      if (val !== dice[i].value) {
+        winCheck = false;
+        break
+      }
+    }
+    // winCheck === gameWon ? null : setGameWon(winCheck)
+    winCheck === gameWon ? null : console.log('game win!');
+  }, [dice])
 
   return (
     <main>
