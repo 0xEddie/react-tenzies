@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Dice from './components/Dice';
 
@@ -21,9 +21,16 @@ function App() {
     return Math.floor(Math.random() * 6) + 1;
   }
 
-  // TODO pass into Dice
+  // when a die is clicked, toggle its 'locked' property
   function toggleLock(e, dieId) {
-    console.log(`toggle lock for die #${dieId}`);
+    // console.log(`toggle lock for die #${dieId}`);
+    // map over dice array, update 'locked' if 'dieId' matches current 'die.id'
+    setDice(oldDice => oldDice.map(
+      die => ({
+        ...die,
+        locked: dieId === die.id ? !die.locked : die.locked
+      })
+    ))
   }
 
   // TODO implement state update
@@ -37,7 +44,7 @@ function App() {
     <main>
       <h1>Tenzies</h1>
       <p>
-        Roll until all dice are the same. <br />Click each die to freeze it at its
+        Roll until all dice are the same.<br />Click each die to freeze it at its
         current value between rolls.
       </p>
       <Dice dice={dice} toggleLock={toggleLock} />
@@ -47,4 +54,5 @@ function App() {
     </main>
   );
 }
+
 export default App;

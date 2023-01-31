@@ -17,7 +17,7 @@ function Die({ die, toggleLock }) {
   return (
     <button 
       type='button' 
-      className="button--die" 
+      className={`button--die ${die.locked ? 'locked' : 'unlocked'}`}
       onClick={(e) => toggleLock(e, die.id)} 
     >
       {die.value}

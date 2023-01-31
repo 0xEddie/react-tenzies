@@ -33,7 +33,6 @@ button {
 
 .button--die {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
   color: #2b283a;
   font-size: 21px;
   height: 42px;
@@ -43,6 +42,10 @@ button {
 
 .locked {
   background-color: #59e391;
+}
+
+.unlocked {
+  background-color: #fff;
 }
 
 .button--roll {
