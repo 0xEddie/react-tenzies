@@ -2,7 +2,7 @@
 
 This is a creation of this [Figma design](https://www.figma.com/file/FqsxRUhAaXM4ezddQK0CdR/Tenzies?node-id=0%3A1&t=pG27k5iHNV8QT2H8-0), created with React.js. [Live demo](https://react-tenzies-0xeddie.vercel.app/) hosted on Vercel.
 
-![gif of winning the game and confetti appearing](.src/assets/react-tenzies.gif)
+![gif of winning the game and confetti appearing](./src/assets/react-tenzies.gif)
 
 ## Local Dev Env
 
